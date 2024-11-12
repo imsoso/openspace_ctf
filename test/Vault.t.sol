@@ -31,5 +31,7 @@ contract VaultExploiter is Test {
         require(vault.isSolve(), "solved");
         vm.stopPrank();
     }
-
+    receive() external payable {
+        vault.withdraw();
+    }
 }
